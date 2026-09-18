@@ -1,0 +1,56 @@
+name: Report a software issue
+description: Report a bug or implementation issue in an open-source RAR software package.
+title: "[Package name]: short description of the issue"
+labels: ["unconfirmed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue. Please fill in what you can — a clear
+        description is enough, you do not need to provide a fix or a script.
+ 
+  - type: input
+    id: package
+    attributes:
+      label: Package name
+      description: Name of the software package (and a link to it, if known).
+      placeholder: e.g. BAR
+    validations:
+      required: true
+ 
+  - type: input
+    id: version
+    attributes:
+      label: Version affected
+      description: Version number, commit hash, or release date, if known.
+      placeholder: e.g. v1.2.0, or "as of Sept 2026"
+    validations:
+      required: false
+ 
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the issue
+      description: >
+        What is wrong, and what is the consequence (e.g. incorrect
+        randomization, incorrect prior updating, incorrect output)?
+      placeholder: Describe the bug and its effect on the software's behavior.
+    validations:
+      required: true
+ 
+  - type: input
+    id: reporter
+    attributes:
+      label: Your name (optional)
+      description: How you'd like to be credited, if at all. Leave blank to stay anonymous.
+    validations:
+      required: false
+ 
+  - type: input
+    id: reported_to_maintainer
+    attributes:
+      label: Reported to package maintainer? (optional)
+      description: If you've already notified the package's authors, note when/how.
+      placeholder: e.g. "Yes, via GitHub issue on their repo, 2026-09-01" or "No"
+    validations:
+      required: false
